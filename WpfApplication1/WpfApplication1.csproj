@@ -82,7 +82,23 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Database" />
-      <Folder Include="Images" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Images\authorization.png" />
+      <Content Include="Images\competition.png" />
+      <Content Include="Images\exit.png" />
+      <Content Include="Images\exportExcel.png" />
+      <Content Include="Images\fonMain.jpg" />
+      <Content Include="Images\home.png" />
+      <Content Include="Images\iconProfile.png" />
+      <Content Include="Images\iconTrainer.png" />
+      <Content Include="Images\logoMain.jpg" />
+      <Content Include="Images\menu.png" />
+      <Content Include="Images\noimage.png" />
+      <Content Include="Images\PhotoProfile.png" />
+      <Content Include="Images\result.png" />
+      <Content Include="Images\sportsmans.png" />
+      <Content Include="Images\team.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
