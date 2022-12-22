@@ -4,15 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" WindowState="Maximized"
         mc:Ignorable="d"
-        Title="Организация соревнований по легкой атлетике" Icon="Images/logoMain.jpg" MinHeight="600" MinWidth="1080" Foreground="White" WindowStartupLocation="CenterScreen" >
+        Title="Организация соревнований по легкой атлетике" MinHeight="600" MinWidth="1080" Foreground="White" WindowStartupLocation="CenterScreen" >
     <Window.Resources>
         <LinearGradientBrush x:Key="GradientStyle" StartPoint="0.5,1" EndPoint="0.5,0">
             <GradientStop Color="LightBlue" Offset="0" />
             <GradientStop Color="White" Offset="1" />
         </LinearGradientBrush>
     </Window.Resources>
-    <Grid Background="{StaticResource GradientStyle}">
-        <Grid Height="60" VerticalAlignment="Top" Background="#FF6273AA"></Grid>
+    <Grid Height="60" VerticalAlignment="Top" Background="#FF6273AA">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+        </Grid.Effect>
+        <TextBlock x:Name="textOrganiz" Text="Организация соревнований по легкой атлетике" FontSize="25"></TextBlock>
     </Grid>
 </Window>
