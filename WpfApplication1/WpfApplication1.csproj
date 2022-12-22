@@ -82,9 +82,6 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Database" />
-    </ItemGroup>
-    <ItemGroup>
       <Content Include="Images\authorization.png" />
       <Content Include="Images\competition.png" />
       <Content Include="Images\exit.png" />
