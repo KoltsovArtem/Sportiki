@@ -97,6 +97,7 @@
       <Content Include="Images\result.png" />
       <Content Include="Images\sportsmans.png" />
       <Content Include="Images\team.png" />
+      <Content Include="Мюсли.txt" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
