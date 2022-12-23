@@ -1,12 +1,49 @@
 ﻿<Window x:Class="WpfApplication1.Windows.MenuWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:WpfApplication1.Windows"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MenuWindow" Height="450" Width="800">
-    <Grid>
-        
+        ResizeMode="NoResize" 
+        Title="Организация соревнований по какому-то спорту, потом придумаем" Height="624" Width="1042" Foreground="White" WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <LinearGradientBrush x:Key="GradientStyle" StartPoint="0.5,1" EndPoint="0.5,0">
+            <GradientStop Color="LightBlue" Offset="0" />
+            <GradientStop Color="#FF6273AA" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid Background="{StaticResource GradientStyle}">
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF6273AA" Grid.ColumnSpan="2">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+            </Grid.Effect>
+            <TextBlock x:Name="textOrganiz" Text="Организация соревнований по какому-то спорту, потом придумаем" FontSize="25"></TextBlock>
+        </Grid>
+        <Grid Margin="0,60,0,0">
+            <Button x:Name="StartProtocols" Content="Сформировать стартовые протоколы" Margin="380,10,46,456" FontFamily="Stencil" FontSize="14.667" Click="StartProtocols_Click"/>
+            <Button x:Name="ResultProtocols" Content="Сформировать протоколы результатов" Margin="380,110,46,356" FontFamily="Stencil" FontSize="14.667" Click="ResultProtocols_Click"/>
+            <Button x:Name="GroupsResultProtocols" Content="Сформировать протоколы результатов команд" Margin="380,210,46,256" FontFamily="Stencil" FontSize="14.667" Click="GroupsResultProtocols_Click"/>
+            <Label x:Name="StartProtocolsLabel"
+               Margin="19,26,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Стартовые протоколы не сформированы"
+               FontFamily="Stencil" FontSize="14.667"/>
+            <Label x:Name="ResultProtocolsLabel"
+               Margin="19,126,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Протоколы результатов не сформированы"
+               FontFamily="Stencil" FontSize="14.667"/>
+            <Label x:Name="GroupsResultProtocolsLabel"
+               Margin="19,226,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Протоколы результатов команд не сформированы"
+               FontFamily="Stencil" FontSize="14.667"/>
+            <Button x:Name="GoToStart" Content="Назад" HorizontalAlignment="Left" Height="32" Margin="909,482,0,0" VerticalAlignment="Top" Width="87" Background="#FF6273AA" BorderBrush="#FFC1C0E8" FontWeight="Bold" Foreground="White" FontFamily="Stencil" FontSize="14.667" Click="GoToStart_Click"/>
+        </Grid>
     </Grid>
 </Window>

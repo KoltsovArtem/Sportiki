@@ -15,17 +15,13 @@
         </LinearGradientBrush>
     </Window.Resources>
     <Grid Background="{StaticResource GradientStyle}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="357*"/>
-            <ColumnDefinition Width="95*"/>
-        </Grid.ColumnDefinitions>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF6273AA" Grid.ColumnSpan="2">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
             <TextBlock x:Name="textOrganiz" Text="Организация соревнований по какому-то спорту, потом придумаем" FontSize="25"></TextBlock>
         </Grid>
-        <Grid Margin="0,60,0,0" Grid.ColumnSpan="2">
+        <Grid Margin="0,60,0,0">
             <Button x:Name="Applications" Content="Загрузить заявочные списки" Margin="300,10,46,456" Click="Applications_Click" FontFamily="Stencil" FontSize="14.667"/>
             <Button x:Name="Checkpoints" Content="Загрузить чекпоинты" Margin="300,110,46,356" Click="Checkpoints_Click" FontFamily="Stencil" FontSize="14.667"/>
             <Button x:Name="Groups" Content="Загрузить группы" Margin="300,210,46,256" Click="Groups_Click" FontFamily="Stencil" FontSize="14.667"/>

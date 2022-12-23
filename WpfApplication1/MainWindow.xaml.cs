@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplication1.Windows;
 
 namespace WpfApplication1
 {
@@ -23,6 +24,7 @@ namespace WpfApplication1
     public partial class MainWindow
     {
         int k = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -66,57 +68,13 @@ namespace WpfApplication1
         private void Check_Click(object sender, RoutedEventArgs e)
         {
             if (k != 5)
-            {
                 MessageBox.Show("Вы должны загрузить все файлы", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-
-        /*private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonCloseMenu.Visibility = Visibility.Collapsed;
-            ButtonOpenMenu.Visibility = Visibility.Visible;
-            GridMain.Margin = new Thickness(70, 60, 0, 0);
-            textOrganiz.Margin = new Thickness(100, 0, 0, 0);
-        }
-        
-        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
+            else
             {
-                case "ItemHome":
-                    GridMain.Navigate(new MainPage());
-                    break;
-                /*case "ItemSportsmans":
-                    GridMain.Navigate(new SportsmansPage());
-                    break;
-                case "ItemTrainers":
-                    GridMain.Navigate(new TrainersPage());
-                    break;
-                case "ItemCommand":
-                    GridMain.Navigate(new TeamsPage());
-                    break;
-                case "ItemMyCommand":
-                    GridMain.Navigate(new MyCommandPage());
-                    break;
-                case "ItemCompetition":
-                    GridMain.Navigate(new CompetitionsPage());
-                    break;
-                case "ItemPartipication":
-                    GridMain.Navigate(new MyRequestsPage());
-                    break;
-                case "ItemResult":
-                    GridMain.Navigate(new ResultCompetitionsPage());
-                    break;
-                case "ItemScore":
-                    GridMain.Navigate(new TotalPersonalScoresPage());
-                    break;
-                case "ItemReports":
-                    GridMain.Navigate(new ReportPage());
-                    break;#1#
-                default:
-                    break;
+                MenuWindow menu = new MenuWindow();
+                menu.Show();
+                this.Close();
             }
-        }*/
+        }
     }
 }
