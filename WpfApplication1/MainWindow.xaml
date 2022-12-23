@@ -4,95 +4,70 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" WindowState="Maximized"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Организация соревнований по легкой атлетике" MinHeight="600" MinWidth="1080" Foreground="White" WindowStartupLocation="CenterScreen" >
+        ResizeMode="NoResize" 
+        Title="Организация соревнований по какому-то спорту, потом придумаем" Height="624" Width="1042" Foreground="White" WindowStartupLocation="CenterScreen" >
     <Window.Resources>
         <LinearGradientBrush x:Key="GradientStyle" StartPoint="0.5,1" EndPoint="0.5,0">
             <GradientStop Color="LightBlue" Offset="0" />
-            <GradientStop Color="White" Offset="1" />
+            <GradientStop Color="#FF6273AA" Offset="1" />
         </LinearGradientBrush>
     </Window.Resources>
-    <Grid>
-        <Frame x:Name="GridMain" Background="White" NavigationUIVisibility="Hidden" Margin="70,60,0,0"/>
-        <Grid Height="60" VerticalAlignment="Top" Background="#FF6273AA">
+    <Grid Background="{StaticResource GradientStyle}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="357*"/>
+            <ColumnDefinition Width="95*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF6273AA" Grid.ColumnSpan="2">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
-            <TextBlock x:Name="textOrganiz" Text="Организация соревнований по легкой атлетике" FontSize="25"></TextBlock>
+            <TextBlock x:Name="textOrganiz" Text="Организация соревнований по какому-то спорту, потом придумаем" FontSize="25"></TextBlock>
         </Grid>
-        <StackPanel>
-                <Grid Height="200" Background="White" RenderTransformOrigin="0.5,0.5">
-                    <Grid.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Grid.RenderTransform>
-                    <Button x:Name="ButtonOpenMenu" Height="40" Width="40" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonOpenMenu_Click"></Button>
-                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="40" Width="40" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCloseMenu_Click"></Button>
-                    <Image x:Name="mainIcon" Source="Images\logoMain.png" Margin="10" VerticalAlignment="Bottom"/>
-                </Grid>
-                <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
-                    <ListViewItem x:Name="ItemHome" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Foreground="White" Text="Главная" VerticalAlignment="Center" Margin="10 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemSportsmans" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="Images\sportsmans.png" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Foreground="White" Text="Спортсмены" VerticalAlignment="Center" Margin="10 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemTrainers"  Height="60" Visibility="Collapsed">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Foreground="White" Text="Тренеры" VerticalAlignment="Center"  Margin="10 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemCommand"  Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="Images\team.png" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Foreground="White" Text="Команды" VerticalAlignment="Center"  Margin="10 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemMyCommand"  Height="60" Visibility="Collapsed">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="Images\team.png" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Foreground="White" Text="Мои команды" VerticalAlignment="Center"  Margin="10 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemCompetition"  Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="Images\competition.png" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Foreground="White" Text="Соревнования" VerticalAlignment="Center"  Margin="9 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemPartipication"  Height="60" Visibility="Collapsed">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Foreground="White" Text="Участия" VerticalAlignment="Center"  Margin="9 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemResult"  Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="Images\result.png" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Foreground="White" Text="Результаты" VerticalAlignment="Center"  Margin="10 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemScore"  Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Foreground="Black" Text="Очки" VerticalAlignment="Center"  Margin="10 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemReports"  Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="Images\exportExcel.png" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Foreground="White" Text="Отчеты" VerticalAlignment="Center"  Margin="10 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                </ListView>
-            </StackPanel>
+        <Grid Margin="0,60,0,0" Grid.ColumnSpan="2">
+            <Button x:Name="Applications" Content="Загрузить заявочные списки" Margin="300,10,46,456" Click="Applications_Click" FontFamily="Stencil" FontSize="14.667"/>
+            <Button x:Name="Checkpoints" Content="Загрузить чекпоинты" Margin="300,110,46,356" Click="Checkpoints_Click" FontFamily="Stencil" FontSize="14.667"/>
+            <Button x:Name="Groups" Content="Загрузить группы" Margin="300,210,46,256" Click="Groups_Click" FontFamily="Stencil" FontSize="14.667"/>
+            <Button x:Name="Routes" Content="Загрузить маршруты" Margin="300,310,46,156" Click="Routes_Click" FontFamily="Stencil" FontSize="14.667"/>
+            <Button x:Name="ProtCheck" Content="Загрузить протоколы чекпоинтов" Margin="300,410,46,71" Click="ProtCheck_Click" FontFamily="Stencil" FontSize="14.667"/>
+            <Label x:Name="ApplicationsLabel"
+               Margin="19,26,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Заявочные списки не загружены"
+               FontFamily="Stencil" FontSize="14.667"/>
+            <Label x:Name="CheckpointsLabel"
+               Margin="19,126,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Чекпоинты не загружены"
+               FontFamily="Stencil" FontSize="14.667"/>
+            <Label x:Name="GroupsLabel"
+               Margin="19,226,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Группы не загружены"
+               FontFamily="Stencil" FontSize="14.667"/>
+            <Label x:Name="RoutesLabel"
+               Margin="19,326,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Маршруты не загружены"
+               FontFamily="Stencil" FontSize="14.667"/>
+            <Label x:Name="ProtCheckLabel"
+               Margin="21,426,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Протоколы чекпоинтов не загружены"
+               FontFamily="Stencil" FontSize="14.667"/>
+            <Label x:Name="CheckLabel"
+               Margin="19,482,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Пожалуйста, перед продолжением убедитесь, что все файлы загружены"
+               FontFamily="Stencil" FontSize="18" FontWeight="Bold"/>
+            <Button x:Name="Check" Content="Далее" HorizontalAlignment="Left" Height="32" Margin="909,482,0,0" VerticalAlignment="Top" Width="87" Background="#FF6273AA" BorderBrush="#FFC1C0E8" FontWeight="Bold" Foreground="White" FontFamily="Stencil" FontSize="14.667" Click="Check_Click"/>
+        </Grid>
     </Grid>
 </Window>

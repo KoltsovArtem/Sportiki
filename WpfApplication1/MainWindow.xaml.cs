@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,24 +20,64 @@ namespace WpfApplication1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow
     {
+        int k = 0;
         public MainWindow()
         {
             InitializeComponent();
-            
-            GridMain.Navigate(new MainPage());
         }
-        
-        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCloseMenu.Visibility = Visibility.Visible;
-            ButtonOpenMenu.Visibility = Visibility.Collapsed;
-            GridMain.Margin = new Thickness(210, 60, 0, 0);
-            textOrganiz.Margin = new Thickness(280, 0, 0, 0);
         }
-        
-        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
+
+        private void Applications_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationsLabel.Content = "Заявочные списки загружены успешно";
+            Applications.Visibility = Visibility.Collapsed;
+            k += 1;
+        }
+
+        private void Checkpoints_Click(object sender, RoutedEventArgs e)
+        {
+            CheckpointsLabel.Content = "Чекпоинты загружены успешно";
+            Checkpoints.Visibility = Visibility.Collapsed;
+            k += 1;
+        }
+
+        private void Groups_Click(object sender, RoutedEventArgs e)
+        {
+            GroupsLabel.Content = "Группы загружены успешно";
+            Groups.Visibility = Visibility.Collapsed;
+            k += 1;
+        }
+
+        private void Routes_Click(object sender, RoutedEventArgs e)
+        {
+            RoutesLabel.Content = "Маршруты загружены успешно";
+            Routes.Visibility = Visibility.Collapsed;
+            k += 1;
+        }
+
+        private void ProtCheck_Click(object sender, RoutedEventArgs e)
+        {
+            ProtCheckLabel.Content = "Протоколы чекпоинтов загружены успешно";
+            ProtCheck.Visibility = Visibility.Collapsed;
+            k += 1;
+        }
+
+        private void Check_Click(object sender, RoutedEventArgs e)
+        {
+            if (k != 5)
+            {
+                MessageBox.Show("Вы должны загрузить все файлы", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+        /*private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             ButtonOpenMenu.Visibility = Visibility.Visible;
@@ -76,10 +118,10 @@ namespace WpfApplication1
                     break;
                 case "ItemReports":
                     GridMain.Navigate(new ReportPage());
-                    break;*/
+                    break;#1#
                 default:
                     break;
             }
-        }
+        }*/
     }
 }
