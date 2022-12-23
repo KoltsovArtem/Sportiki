@@ -17,6 +17,6 @@
         <Grid.Effect>
             <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
         </Grid.Effect>
-        <TextBlock x:Name="textOrganiz" Text="Организация соревнований по легкой атлетике" FontSize="25"></TextBlock>
+        <TextBlock x:Name="textOrganiz" Text="Организация соревнований по легкой атлетике" FontSize="35"></TextBlock>
     </Grid>
 </Window>
