@@ -13,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfApplication1.Pages;
 
 namespace WpfApplication1
 {
@@ -27,10 +26,6 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
         }
 
         private void Applications_Click(object sender, RoutedEventArgs e)
