@@ -20,23 +20,16 @@
         </LinearGradientBrush>
     </Window.Resources>
     <Grid Background="{StaticResource GradientStyle}">
+        <Frame x:Name="GridMain" Background="White" NavigationUIVisibility="Hidden" Margin="60,60,10,10"/>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF6273AA" Grid.ColumnSpan="2">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
-            <TextBlock x:Name="textOrganiz" Text="Организация соревнований по какому-то спорту, потом придумаем" FontSize="25" Margin="69,0,0,0"></TextBlock>
+            <TextBlock x:Name="textOrganiz" Text="Организация соревнований по какому-то спорту, потом придумаем" FontSize="25" Margin="60,0,0,0"></TextBlock>
         </Grid>
-        <StackPanel Margin="0,0,975,0" Background="BlanchedAlmond">
-            <Grid  Height="200" Background="{StaticResource GradientStyle1}" RenderTransformOrigin="0.5,0.5">
-                <Grid.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Grid.RenderTransform>
-                <Button x:Name="ButtonOpenMenu" Content="{StaticResource ResourceImage}" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <StackPanel x:Name="Panel"  Margin="0,0,975,0" Background="BlanchedAlmond">
+            <Grid  Height="200" Background="{StaticResource GradientStyle1}">
+                <Button x:Name="ButtonMenu" Content="{StaticResource ResourceImage}" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonMenu_Click"/>
             </Grid>
         </StackPanel>
     </Grid>
