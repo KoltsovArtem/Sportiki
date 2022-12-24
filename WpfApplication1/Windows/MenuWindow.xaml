@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         ResizeMode="NoResize" 
-        Title="Организация соревнований по какому-то спорту, потом придумаем" Height="624" Width="1042" Foreground="White" WindowStartupLocation="CenterScreen" >
+        Title="Формирование " Height="508" Width="1042" Foreground="White" WindowStartupLocation="CenterScreen" >
     <Window.Resources>
         <LinearGradientBrush x:Key="GradientStyle" StartPoint="0.5,1" EndPoint="0.5,0">
             <GradientStop Color="LightBlue" Offset="0" />
@@ -22,28 +22,35 @@
             <TextBlock x:Name="textOrganiz" Text="Организация соревнований по какому-то спорту, потом придумаем" FontSize="25"></TextBlock>
         </Grid>
         <Grid Margin="0,60,0,0">
-            <Button x:Name="StartProtocols" Content="Сформировать стартовые протоколы" Margin="380,10,46,456" FontFamily="Stencil" FontSize="14.667" Click="StartProtocols_Click"/>
-            <Button x:Name="ResultProtocols" Content="Сформировать протоколы результатов" Margin="380,110,46,356" FontFamily="Stencil" FontSize="14.667" Click="ResultProtocols_Click"/>
-            <Button x:Name="GroupsResultProtocols" Content="Сформировать протоколы результатов команд" Margin="380,210,46,256" FontFamily="Stencil" FontSize="14.667" Click="GroupsResultProtocols_Click"/>
+            <Button x:Name="StartProtocols" Content="Сформировать стартовые протоколы" Margin="380,10,46,346" FontFamily="Stencil" FontSize="14.667" Click="StartProtocols_Click"/>
+            <Button x:Name="ResultProtocols" Content="Сформировать протоколы результатов" Margin="380,110,46,246" FontFamily="Stencil" FontSize="14.667" Click="ResultProtocols_Click"/>
+            <Button x:Name="GroupsResultProtocols" Content="Сформировать протоколы результатов команд" Margin="380,210,46,146" FontFamily="Stencil" FontSize="14.667" Click="GroupsResultProtocols_Click"/>
             <Label x:Name="StartProtocolsLabel"
-               Margin="19,26,0,0"
+               Margin="19,34,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="Стартовые протоколы не сформированы"
                FontFamily="Stencil" FontSize="14.667"/>
             <Label x:Name="ResultProtocolsLabel"
-               Margin="19,126,0,0"
+               Margin="19,134,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="Протоколы результатов не сформированы"
                FontFamily="Stencil" FontSize="14.667"/>
             <Label x:Name="GroupsResultProtocolsLabel"
-               Margin="19,226,0,0"
+               Margin="19,234,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="Протоколы результатов команд не сформированы"
                FontFamily="Stencil" FontSize="14.667"/>
-            <Button x:Name="GoToStart" Content="Назад" HorizontalAlignment="Left" Height="32" Margin="909,482,0,0" VerticalAlignment="Top" Width="87" Background="#FF6273AA" BorderBrush="#FFC1C0E8" FontWeight="Bold" Foreground="White" FontFamily="Stencil" FontSize="14.667" Click="GoToStart_Click"/>
+            <Label x:Name="Announcement"
+               Margin="10,314,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Для продолжения сформируйте необходимые файлы"
+               FontFamily="Stencil" FontSize="18" FontWeight="Bold"/>
+            <Button x:Name="BackUp" Content="Назад" HorizontalAlignment="Left" Height="32" Margin="909,315,0,0" VerticalAlignment="Top" Width="87" Background="#FF6273AA" BorderBrush="#FFC1C0E8" FontWeight="Bold" Foreground="White" FontFamily="Stencil" FontSize="14.667" Click="BackUp_Click"/>
+            <Button x:Name="SeeResults" Content="Просмотр результатов" HorizontalAlignment="Left" Height="32" Margin="822,352,0,0" VerticalAlignment="Top" Width="174" Background="#FF6273AA" BorderBrush="#FFC1C0E8" FontWeight="Bold" Foreground="White" FontFamily="Stencil" FontSize="14.667" Visibility="Collapsed" Click="SeeResults_Click"/>
         </Grid>
     </Grid>
 </Window>
