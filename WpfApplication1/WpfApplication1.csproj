@@ -50,6 +50,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\Cheto.xaml.cs">
+      <DependentUpon>Cheto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
@@ -69,6 +72,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Cheto.xaml" />
     <Page Include="Windows\MenuWindow.xaml" />
     <Page Include="Windows\ResultsWindow.xaml" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using WpfApplication1.Pages;
 
 namespace WpfApplication1.Windows
 {
@@ -35,7 +36,7 @@ namespace WpfApplication1.Windows
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
                 case "ItemSportsmans":
-                    //GridMain.Navigate(new SportsmansPage());
+                    GridMain.Navigate(new Cheto());
                     break;
                 case "ItemCommand":
                     //GridMain.Navigate(new TeamsPage());

@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         ResizeMode="NoResize" 
-        Title="Результат работы программы" Height="508" Width="1042" Foreground="White" WindowStartupLocation="CenterScreen" >
+        Title="Результат работы программы" Height="550" Width="1042" Foreground="White" WindowStartupLocation="CenterScreen" >
     <Window.Resources>
         <LinearGradientBrush x:Key="GradientStyle" StartPoint="0.9,1" EndPoint="0.5,0">
             <GradientStop Color="LightBlue" Offset="0" />
@@ -19,8 +19,8 @@
             <GradientStop Color="#FF6273AA" Offset="1" />
         </LinearGradientBrush>
     </Window.Resources>
-    <Grid Background="{StaticResource GradientStyle}">
-        <Frame x:Name="GridMain" Background="White" NavigationUIVisibility="Hidden" Margin="60,60,10,10"/>
+    <Grid Background="{StaticResource GradientStyle}" Margin="0,0,0,0">
+        <Frame x:Name="GridMain" Background="White" NavigationUIVisibility="Hidden" Height ="450" Margin="60,60,10,10"/>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF6273AA" Grid.ColumnSpan="2">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
