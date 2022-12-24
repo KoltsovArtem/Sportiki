@@ -99,7 +99,7 @@
     <Content Include="Images\iconProfile.png" />
     <Content Include="Images\iconTrainer.png" />
     <Content Include="Images\logoMain.jpg" />
-    <Content Include="Images\menu.png" />
+    <Resource Include="Images\menu.png" />
     <Content Include="Images\noimage.png" />
     <Content Include="Images\PhotoProfile.png" />
     <Content Include="Images\result.png" />
