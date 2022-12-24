@@ -6,7 +6,7 @@ namespace WpfApplication1.Windows
 {
     public partial class ResultsWindow : Window
     {
-        int i = 0; 
+        int i = 0;
 
         public ResultsWindow()
         {

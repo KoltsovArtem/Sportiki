@@ -29,7 +29,7 @@
         </Grid>
         <StackPanel x:Name="Panel"  Margin="0,0,975,0" Background="BlanchedAlmond">
             <Grid  Height="200" Background="{StaticResource GradientStyle1}">
-                <Button x:Name="ButtonMenu" Content="{StaticResource ResourceImage}" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonMenu_Click"/>
+                <Button x:Name="ButtonMenu" Content="{StaticResource ResourceImage}" Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonMenu_Click"/>
             </Grid>
             <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
                 <ListViewItem x:Name="ItemSportsmans" Height="50">
