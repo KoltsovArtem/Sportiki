@@ -1,14 +1,11 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace WpfApplication1.Windows
 {
     public partial class ResultsWindow : Window
     {
         int i = 0; 
-        private void Open()
-        {
-
-        }
 
         public ResultsWindow()
         {
@@ -30,6 +27,33 @@ namespace WpfApplication1.Windows
                 textOrganiz.Margin = new Thickness(60, 0, 0, 0);
                 Panel.Margin = new Thickness(0, 0, 975, 0);
                 i = 0;
+            }
+        }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
+            {
+                case "ItemSportsmans":
+                    //GridMain.Navigate(new SportsmansPage());
+                    break;
+                case "ItemCommand":
+                    //GridMain.Navigate(new TeamsPage());
+                    break;
+                case "ItemMyCommand":
+                    //GridMain.Navigate(new MyCommandPage());
+                    break;
+                case "ItemCompetition":
+                    //GridMain.Navigate(new CompetitionsPage());
+                    break;
+                case "ItemResult":
+                    //GridMain.Navigate(new ResultCompetitionsPage());
+                    break;
+                case "ItemReports":
+                    //GridMain.Navigate(new ReportPage());
+                    break;
+                default:
+                    break;
             }
         }
     }

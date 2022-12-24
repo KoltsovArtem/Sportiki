@@ -103,7 +103,7 @@
     <Content Include="Images\noimage.png" />
     <Content Include="Images\PhotoProfile.png" />
     <Content Include="Images\result.png" />
-    <Content Include="Images\sportsmans.png" />
+    <Resource Include="Images\sportsmans.png" />
     <Content Include="Images\team.png" />
     <Content Include="Мюсли.txt" />
   </ItemGroup>

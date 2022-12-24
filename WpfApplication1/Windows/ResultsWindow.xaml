@@ -31,6 +31,44 @@
             <Grid  Height="200" Background="{StaticResource GradientStyle1}">
                 <Button x:Name="ButtonMenu" Content="{StaticResource ResourceImage}" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonMenu_Click"/>
             </Grid>
+            <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
+                <ListViewItem x:Name="ItemSportsmans" Height="50">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="\Images\sportsmans.png" Height="25" Width="25" Margin="10"/>
+                        <TextBlock Foreground="Black" Text="Спортсмены" VerticalAlignment="Center" Margin="10 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="ItemCommand"  Height="50">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="\Images\team.png" Height="25" Width="25" Margin="10"/>
+                        <TextBlock Foreground="Black" Text="Команды" VerticalAlignment="Center"  Margin="10 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="ItemMyCommand"  Height="50" Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="\Images\team.png" Height="25" Width="25" Margin="10"/>
+                        <TextBlock Foreground="Black" Text="Мои команды" VerticalAlignment="Center"  Margin="10 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="ItemCompetition"  Height="50">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="\Images\competition.png" Height="25" Width="25" Margin="10"/>
+                        <TextBlock Foreground="Black" Text="Соревнования" VerticalAlignment="Center"  Margin="9 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="ItemResult"  Height="50">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="\Images\result.png" Height="25" Width="25" Margin="10"/>
+                        <TextBlock Foreground="Black" Text="Результаты" VerticalAlignment="Center"  Margin="10 10"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="ItemReports"  Height="50">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="\Images\exportExcel.png" Height="25" Width="25" Margin="10"/>
+                        <TextBlock Foreground="Black" Text="Отчеты" VerticalAlignment="Center"  Margin="10 10"/>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
         </StackPanel>
     </Grid>
 </Window>
