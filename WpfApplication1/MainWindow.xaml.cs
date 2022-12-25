@@ -43,8 +43,6 @@ namespace WpfApplication1
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
-                MessageBox.Show(openFileDialog.FileName);
-
                 var pathCsvFile = openFileDialog.FileName;
                 MessageBox.Show(pathCsvFile);
 
@@ -70,7 +68,11 @@ namespace WpfApplication1
 
                 }
             }
-            OpenFileDialog Dialog = new OpenFileDialog();
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Excel.Workbook xlWB;
+            Excel.Worksheet xlSht;
+            Excel.Range Rng;
+            /*OpenFileDialog Dialog = new OpenFileDialog();
             if (Dialog.ShowDialog() == true)
             {
                 //var pathCsvFile1 = File.Create(pathStart);
@@ -113,7 +115,7 @@ namespace WpfApplication1
 
                 }
                 pathCsvFile1.Close();
-            }
+            }*/
             ApplicationsLabel.Content = "Заявочные списки загружены успешно";
             Applications.Visibility = Visibility.Collapsed;
             k += 1;

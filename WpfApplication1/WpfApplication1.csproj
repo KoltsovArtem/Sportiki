@@ -127,6 +127,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataBase.xlsx" />
     <Content Include="Images\authorization.png" />
     <Content Include="Images\competition.png" />
     <Content Include="Images\exit.png" />
