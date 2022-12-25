@@ -18,7 +18,6 @@ using System.IO;
 using CsvHelper;
 using System.Collections;
 using System.Globalization;
-using System.IO;
 using System.Text;
 using CsvHelper.Configuration;
 using WpfApplication1.Classes;
@@ -43,11 +42,10 @@ namespace WpfApplication1
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
-                // указываем путь к файлу csv
+                MessageBox.Show(openFileDialog.FileName);
 
-                //var pathCsvFile = pathApply;
-                var pathCsvFile = @"..\..\..\..\..\sample-data\applications\application1.csv";
-
+                var pathCsvFile = openFileDialog.FileName;
+                MessageBox.Show(pathCsvFile);
 
                 var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
@@ -62,18 +60,20 @@ namespace WpfApplication1
                     {
                         csv.Read();
 
-                        var data = csv.GetRecords<personApplication>().ToHashSet(); 
+                        var data = csv.GetRecords<personApplication>().ToHashSet();
                         foreach (var person in data)
                         {
                             csv.Read();
-
-                            Console.WriteLine(person);
                         }
                     }
 
                 }
+            }
+            OpenFileDialog Dialog = new OpenFileDialog();
+            if (Dialog.ShowDialog() == true)
+            {
                 //var pathCsvFile1 = File.Create(pathStart);
-                var path = @"..\..\..\..\..\sample-data\applications\application1.csv";
+                var path = Dialog.FileName;
 
                 var pathCsvFile1 = File.Create(path);
                 pathCsvFile1.Close();
@@ -95,18 +95,23 @@ namespace WpfApplication1
 
 
                 };
-
+                
+                var configuration1 = new CsvConfiguration(CultureInfo.InvariantCulture)
+                {
+                    Encoding = Encoding.UTF8, // Файл использует кодировку UTF-8
+                    Delimiter = "," // Разделитель - запятая
+                };
 
                 using (var fs1 = File.Open(path, FileMode.Open, FileAccess.Write, FileShare.Write))
                 {
                     using (var textWriter = new StreamWriter(fs1, Encoding.UTF8))
-                    using (var csv1 = new CsvWriter(textWriter, configuration))
+                    using (var csv1 = new CsvWriter(textWriter, configuration1))
                     {
                         csv1.WriteRecords(startLists);
                     }
 
                 }
-                pathCsvFile1.Close(); 
+                pathCsvFile1.Close();
             }
             ApplicationsLabel.Content = "Заявочные списки загружены успешно";
             Applications.Visibility = Visibility.Collapsed;
