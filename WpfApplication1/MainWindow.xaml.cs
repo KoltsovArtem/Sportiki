@@ -14,6 +14,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApplication1.Windows;
+using System.IO;
+using CsvHelper;
+using System.Collections;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using CsvHelper.Configuration;
+using WpfApplication1.Classes;
 
 namespace WpfApplication1
 {
@@ -32,6 +40,74 @@ namespace WpfApplication1
 
         private void Applications_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // указываем путь к файлу csv
+
+                //var pathCsvFile = pathApply;
+                var pathCsvFile = @"..\..\..\..\..\sample-data\applications\application1.csv";
+
+
+                var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
+                {
+                    Encoding = Encoding.UTF8, // Файл использует кодировку UTF-8
+                    Delimiter = "," // Разделитель - запятая
+                };
+
+                using (var fs = File.Open(pathCsvFile, FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    using (var textReader = new StreamReader(fs, Encoding.UTF8))
+                    using (var csv = new CsvReader(textReader, configuration))
+                    {
+                        csv.Read();
+
+                        var data = csv.GetRecords<personApplication>().ToHashSet(); 
+                        foreach (var person in data)
+                        {
+                            csv.Read();
+
+                            Console.WriteLine(person);
+                        }
+                    }
+
+                }
+                //var pathCsvFile1 = File.Create(pathStart);
+                var path = @"..\..\..\..\..\sample-data\applications\application1.csv";
+
+                var pathCsvFile1 = File.Create(path);
+                pathCsvFile1.Close();
+
+
+                // добавляем тестовые данные, которые будем записывать в csv файл
+
+                List<startList> startLists = new List<startList>
+
+                {
+                    new startList() { 
+                        Группа = "Б-09", Фамилия = "Якубова", Имя = "Ксения",Номер = 1},
+
+                    new startList() { 
+                        Группа = "Б-09", Фамилия = "Кольцов", Имя = "Артем",Номер = 2},
+
+                    new startList() { 
+                        Группа = "Б-09", Фамилия = "Гвоздь", Имя = "Дмитрий",Номер = 3}
+
+
+                };
+
+
+                using (var fs1 = File.Open(path, FileMode.Open, FileAccess.Write, FileShare.Write))
+                {
+                    using (var textWriter = new StreamWriter(fs1, Encoding.UTF8))
+                    using (var csv1 = new CsvWriter(textWriter, configuration))
+                    {
+                        csv1.WriteRecords(startLists);
+                    }
+
+                }
+                pathCsvFile1.Close(); 
+            }
             ApplicationsLabel.Content = "Заявочные списки загружены успешно";
             Applications.Visibility = Visibility.Collapsed;
             k += 1;

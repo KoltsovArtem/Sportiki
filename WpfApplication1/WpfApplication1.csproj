@@ -50,6 +50,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\personApplication.cs" />
+    <Compile Include="Classes\startList.cs" />
     <Compile Include="Pages\Cheto.xaml.cs">
       <DependentUpon>Cheto.xaml</DependentUpon>
     </Compile>
@@ -109,6 +111,22 @@
     <Content Include="Images\result.png" />
     <Resource Include="Images\sportsmans.png" />
     <Content Include="Images\team.png" />
+    <Content Include="sample-data\applications\application1.csv" />
+    <Content Include="sample-data\applications\application10.csv" />
+    <Content Include="sample-data\applications\application11.csv" />
+    <Content Include="sample-data\applications\application12.csv" />
+    <Content Include="sample-data\applications\application13.csv" />
+    <Content Include="sample-data\applications\application14.csv" />
+    <Content Include="sample-data\applications\application15.csv" />
+    <Content Include="sample-data\applications\application16.csv" />
+    <Content Include="sample-data\applications\application2.csv" />
+    <Content Include="sample-data\applications\application3.csv" />
+    <Content Include="sample-data\applications\application4.csv" />
+    <Content Include="sample-data\applications\application5.csv" />
+    <Content Include="sample-data\applications\application6.csv" />
+    <Content Include="sample-data\applications\application7.csv" />
+    <Content Include="sample-data\applications\application8.csv" />
+    <Content Include="sample-data\applications\application9.csv" />
     <Content Include="Мюсли.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
