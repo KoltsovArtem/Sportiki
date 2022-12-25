@@ -21,6 +21,7 @@ using System.Globalization;
 using System.Text;
 using CsvHelper.Configuration;
 using WpfApplication1.Classes;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WpfApplication1
 {
