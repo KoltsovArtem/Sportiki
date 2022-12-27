@@ -40,6 +40,7 @@ namespace WpfApplication1
 
         private void Applications_Click(object sender, RoutedEventArgs e)
         {
+            HashSet<personApplication> data;
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
@@ -59,7 +60,7 @@ namespace WpfApplication1
                     {
                         csv.Read();
 
-                        var data = csv.GetRecords<personApplication>().ToHashSet();
+                        data = csv.GetRecords<personApplication>().ToHashSet();
                         foreach (var person in data)
                         {
                             csv.Read();
@@ -67,11 +68,59 @@ namespace WpfApplication1
                     }
 
                 }
+                Microsoft.Office.Interop.Excel.Application xlApp;
+                Excel.Workbook xlWB;
+                Excel.Worksheet xlSht;
+                Excel.Range Rng;
+            
+                object misvalue = System.Reflection.Missing.Value;
+                // try
+                // {
+                //Start Excel and get Application object.
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlApp.Visible = true;
+                
+                //Get a new workbook.
+                xlWB = xlApp.Workbooks.Add("");
+                xlSht = (Excel.Worksheet)xlWB.ActiveSheet;
+
+                xlSht.Cells[1, 1] = "id";
+                xlSht.Cells[1, 2] = "Group";
+                xlSht.Cells[1, 3] = "Surname";
+                xlSht.Cells[1, 4] = "Name";
+                xlSht.Cells[1, 5] = "YOB";
+                xlSht.Cells[1, 6] = "Category";
+                xlSht.Cells[1, 7] = "Team";
+                
+                //Format A1:D1 as bold, vertical alignment = center.
+                xlSht.get_Range("A1", "G1").Font.Bold = true;
+                xlSht.get_Range("A1", "G1").VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                xlSht.get_Range("A2", "G").Value2 = data;
+                
+                Rng = xlSht.get_Range("A1", "G1");
+                Rng.EntireColumn.AutoFit();
+
+                
+                xlApp.Visible = false;
+                xlApp.UserControl = false;
+                xlWB.SaveAs(@"\..\test\test505.xls", Excel.XlFileFormat.xlWorkbookDefault,
+                    Type.Missing, Type.Missing,
+                    false, false,Excel.XlSaveAsAccessMode.xlNoChange,
+                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+                xlWB.Close();
+                xlApp.Quit();
+                //}
+                // catch (Exception ex)
+                // {
+                //     
+                // }
+                
             }
-            Microsoft.Office.Interop.Excel.Application xlApp;
-            Excel.Workbook xlWB;
-            Excel.Worksheet xlSht;
-            Excel.Range Rng;
+            
+
+            
+
             /*OpenFileDialog Dialog = new OpenFileDialog();
             if (Dialog.ShowDialog() == true)
             {
@@ -120,6 +169,7 @@ namespace WpfApplication1
             Applications.Visibility = Visibility.Collapsed;
             k += 1;
         }
+        
 
         private void Checkpoints_Click(object sender, RoutedEventArgs e)
         {
